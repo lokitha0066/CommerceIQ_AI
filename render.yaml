@@ -2,6 +2,7 @@ services:
   - type: web
     name: commerceiq-backend
     runtime: docker
+    plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     healthCheckPath: /docs
