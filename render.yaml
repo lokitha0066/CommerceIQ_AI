@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: commerceiq-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /docs
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PORT
+        value: "10000"
+      - key: IMAGE_STORAGE_BACKEND
+        value: supabase
+      - key: SEED_DATA_ON_EMPTY
+        value: "false"
+      - key: SUPABASE_URL
+        value: https://ckgebhtlrqfjvhsxlhxb.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_STORAGE_BUCKET
+        value: product-images
+      - key: FIREBASE_PROJECT_ID
+        value: commerceiq-ai
+      - key: FRONTEND_ORIGINS
+        sync: false
